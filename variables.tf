@@ -1,14 +1,5 @@
-variable "service_mapping" {
-  description = "Map of workspace to service"
-  type        = map(list(string))
-  default = {
-    east = []
-    west = []
-  }
-}
-
 variable "services" {
-  description = "Simplified version of a monitored service"
+  description = "Services that an instance needs to care about"
   type = map(object({
     # Name of the service
     name = string
@@ -20,5 +11,17 @@ variable "services" {
 variable "workspace" {
   description = "workspace name"
   type = string
-  default = "east"
+  default = ""
+}
+
+variable "provider_address" {
+  description = "provider instance's address"
+  type = string
+  default = ""
+}
+
+variable "provider_datacenter" {
+  description = "provider instance's datacenter"
+  type = string
+  default = "dc1"
 }
