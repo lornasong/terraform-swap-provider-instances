@@ -38,7 +38,7 @@ Confirm k/v resources are created: refresh "Key/Value" page and see the east dir
 
 Destroy resources and stop Consul agent:
 ```
-terraform destroy
+terraform destroy -var "workspace=east"
 consul leave
 ```
 
@@ -62,6 +62,6 @@ Confirm k/v resources are created: refresh "Key/Value" page and see the west dir
 
 Destroy resources and stop Consul agent:
 ```
-terraform destroy
+terraform destroy -var "workspace=west"
 consul leave -http-addr=http://127.0.0.1:8501
 ```
