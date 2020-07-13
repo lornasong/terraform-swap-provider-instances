@@ -4,6 +4,10 @@ POC for how to run separate and potentially concurrent `terraform apply`s for ea
 
 This POC uses Consul to create different provider instances - Consul server agents running on different ports. For each instance, the `terraform apply` will create different k/v pair resources.
 
+**Description:**
+
+Terraform configuration has a local map that contains the provider instance specific configuration values.
+
 **Approximate workflow:**
 
 Create resource(s) for one Consul agent (east) using `terraform apply -var "workspace=east"`
