@@ -1,8 +1,3 @@
-service_mapping = {
-  west = ["web2", "web1"]
-  east = ["web1"]
-}
-
 services = {
   web1: {
     name = "web1"
@@ -13,3 +8,7 @@ services = {
     address = "10.10.10.10:8000"
   }
 }
+
+workspace = "east"
+provider_address = "localhost:8500"
+provider_datacenter = "dc1"
